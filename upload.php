@@ -20,6 +20,10 @@
     if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path)) {
       echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
       " has been uploaded {$_FILES["file"]["type"]}";
+      $audioname = "audio_".md5(basename($_FILES['uploaded_file']['name'])."mp4";
+      $videoname = "video_".md5(basename($_FILES['uploaded_file']['name'])."mp4";
+      shell_exec("ffmpeg -i $path -c copy -an $path."$/audioname");
+      echo $audioname;
     } else{
         echo "There was an error uploading the file, please try again!";
     }
