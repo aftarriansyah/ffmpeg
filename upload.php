@@ -17,7 +17,7 @@
     $path = "uploads/";
     $path = $path . basename( $_FILES['uploaded_file']['name']);
     
-    if($_FILES["file"]["type"] != "video/mp4"){
+    if($_FILES["uploaded_file"]["type"] != "video/mp4"){
       echo "only .mp4 file");
     }elseif(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path)) {
       echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
