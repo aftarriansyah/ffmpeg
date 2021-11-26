@@ -15,12 +15,10 @@
 <?PHP
   if(!empty($_FILES['uploaded_file']))
   {
-    print_r($_FILES);
     $path = "uploads/";
     $path = $path . basename( $_FILES['uploaded_file']['name']);
     if($_FILES["uploaded_file"]["type"] != "video/mp4"){
       echo "only .mp4 file";
-      echo $_FILES["uploaded_file"]["type"];
     }elseif(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path)) {
       echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
       " has been uploaded";
